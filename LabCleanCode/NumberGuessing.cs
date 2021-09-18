@@ -8,7 +8,7 @@ namespace LabCleanCode
         {
             while (true)
             {
-                int randno = Newnum(1, 101);
+                int randno = GetRandomNumber(1, 101);
                 int count = 1;
                 while (true)
                 {
@@ -41,10 +41,7 @@ namespace LabCleanCode
 
         }
 
-        ////////////////////////////////////////////////////////////////////////////////
-        // Aleatorio
-        ////////////////////////////////////////////////////////////////////////////////
-        static int Newnum(int min, int max)
+        static int GetRandomNumber(int min, int max)
         {
             Random random = new Random();
             return random.Next(min, max);

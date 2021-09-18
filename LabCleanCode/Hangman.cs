@@ -13,7 +13,6 @@ namespace LabCleanCode
             StreamReader file = new StreamReader("usa.txt");
             Random randGen = new Random();
             var idx = randGen.Next(0, 61333);
-            //var idx = randGen.Next(0, 10);
             string mysteryWord = new string("");
             for (int i = 0; i < idx; i++) {
                 mysteryWord = file.ReadLine();
@@ -56,22 +55,6 @@ namespace LabCleanCode
             }
             Console.ReadLine();
         }
-
-
-        /*public static bool perdio(string word1, string word2, int counter)
-        {
-            if (word1.Equals(word2))
-            {
-                Console.Write("Congratulations the word was: " + word2);
-                return true;
-            }
-            if (counter > 10)
-            {
-                Console.Write("You lose, the word was: " + word2);
-                counter++;
-            }
-            return false;
-        }*/
 
         ////////////////////////////////////////////////////////////////////////////////
         // Validación del juego

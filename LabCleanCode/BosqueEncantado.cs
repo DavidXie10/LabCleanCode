@@ -44,8 +44,9 @@
         }
 
 
-        public int num_lag_vec(int pf, int pc, int pIntCont, var matriz)
+        public int num_lag_vec(int pf, int pc)
         {
+            int pIntCont = 0;
             for (int estaFila = pf - 1; estaFila <= pf + 1; ++estaFila)
             {
                 for (int estaColumna = pc - 1; estaColumna <= pc + 1; ++estaColumna)
@@ -54,7 +55,7 @@
                     {
                         if (0 <= estaFila && 0 <= estaColumna && pf < cantidadFilas && pc < cantidadColumnas)
                         {
-                            if (matriz[pf,pc] == 1)
+                            if (matrizBosque[pf,pc] == 1)
                                 ++pIntCont;
                         }
                     }
@@ -63,8 +64,9 @@
             return pIntCont;
         }
 
-        public int num_arb_vec(int pf, int pc, int pIntCont, var pmatriz)
+        public int num_arb_vec(int pf, int pc)
         {
+            int pIntCont = 0;
             for (int estaFila = pf - 1; estaFila <= pf + 1; ++estaFila)
             {
                 for (int estaColumna = pc - 1; estaColumna <= pc + 1; ++estaColumna)
@@ -73,7 +75,7 @@
                     {
                         if (0 <= estaFila && 0 <= estaColumna && pf < cantidadFilas && pc < cantidadColumnas)
                         {
-                            if (pmatriz[pf,pc] == 2)
+                            if (matrizBosque[pf,pc] == 2)
                                 ++pIntCont;
                         }
                     }
@@ -88,8 +90,8 @@
             {
                 for (int c = 0; c < cantidadColumnas; ++c)
                 {
-                    int contadorArboles = num_arb_vec(f,c,0,matrizBosque);
-                    int contadorLagos = num_lag_vec(f,c,0,matrizBosque);
+                    int contadorArboles = num_arb_vec(f,c);
+                    int contadorLagos = num_lag_vec(f,c);
                     if (matrizBosque[f,c] == 2)
                     {
                         if (contadorLagos >= 4)
